@@ -1,0 +1,20 @@
+[package]
+name = "libaudioverse"
+version = "0.1.0"
+description = "Libaudioverse bindings for Rust"
+authors = ["Neurrone <neurrone@users.noreply.github.com>"]
+license = "MIT"
+readme = "readme.md"
+repository = "https://github.com/Neurrone/rust-libaudioverse"
+categories = ["api-bindings", "multimedia::audio"]
+keywords = ["audio", "3d"]
+
+[lib]
+name       = "libaudioverse"
+path       = "src/lib.rs"
+
+[dependencies.libaudioverse-sys]
+path = "libaudioverse-sys"
+version = "0.1.0"
+
+[workspace]

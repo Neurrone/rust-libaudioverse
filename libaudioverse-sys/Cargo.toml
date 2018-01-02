@@ -1,0 +1,22 @@
+[package]
+name = "libaudioverse-sys"
+description = "Raw Libaudioverse bindings for Rust"
+version = "0.1.0"
+authors = ["Neurrone <neurrone@users.noreply.github.com>"]
+license = "MIT"
+repository = "https://github.com/Neurrone/rust-libaudioverse"
+categories = ["external-ffi-bindings", "multimedia::audio"]
+keywords = ["audio", "3d"]
+build = "build.rs"
+
+[lib]
+name = "libaudioverse_sys"
+path = "src/lib.rs"
+
+[build-dependencies.bindgen]
+version = "0.32.1"
+optional = true
+
+[features]
+default = []
+use-bindgen = ["bindgen"]
