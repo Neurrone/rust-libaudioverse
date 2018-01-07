@@ -36,14 +36,6 @@ impl NodeStateProperty {
         }
     }
     
-    /// Returns the range of the node's property
-    pub fn get_range(&self) -> Result<(i32, i32)> {
-        let mut min : i32 = 0;
-        let mut max : i32 = 0;
-        check(unsafe { libaudioverse_sys::Lav_nodeGetIntPropertyRange(self.node_handle, self.index, &mut min, &mut max) })?;
-        Ok((min, max))
-    }
-    
     fn set_int(&self, value : i32) -> Result<()> {
         check(unsafe { libaudioverse_sys::Lav_nodeSetIntProperty(self.node_handle, self.index, value) })?;
         Ok(())
