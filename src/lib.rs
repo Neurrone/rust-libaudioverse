@@ -5,6 +5,7 @@
 extern crate libaudioverse_sys;
 
 pub mod buffer;
+pub mod lav_ptr;
 pub mod nodes;
 pub mod server;
 
