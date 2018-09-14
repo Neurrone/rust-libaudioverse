@@ -2,6 +2,7 @@
 name = "libaudioverse-sys"
 description = "Raw Libaudioverse bindings for Rust"
 version = "0.1.0"
+edition = '2018'
 authors = ["Neurrone <neurrone@users.noreply.github.com>"]
 license = "MIT"
 repository = "https://github.com/Neurrone/rust-libaudioverse"
@@ -11,10 +12,11 @@ build = "build.rs"
 
 [lib]
 name = "libaudioverse_sys"
+crate-type = ["lib"]
 path = "src/lib.rs"
 
 [build-dependencies.bindgen]
-version = "0.32.1"
+version = "0.40.0"
 optional = true
 
 [features]

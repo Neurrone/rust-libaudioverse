@@ -8,7 +8,8 @@
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
-#[link(name = "libaudioverse")]
+#[doc(inline)]
+pub use self::root::*;
 
 #[cfg(test)]
 mod tests {
