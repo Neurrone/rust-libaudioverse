@@ -7,6 +7,7 @@ use std::{thread, time};
 use std::ffi::CString;
 use libaudioverse::{Node, nodes::push_node::PushNode, Server};
 
+// Reads from a provided .wav file and plays it with a push node, using Hound for wav decoding
 fn main() {
     // Make a WavReader that reads the file provided as program argument.
     let fname = env::args().nth(1).expect("no file given");
@@ -20,7 +21,7 @@ fn main() {
     let samples_left = reader.len() as usize;
     let duration = reader.duration() / spec.sample_rate;
     println!("frames: {}, total samples: {}, duration: {}", reader.duration(), samples_left, duration);
-    let frames = 4096;
+    let frames = 1024;
     
     let mut push_node = PushNode::new(&server, spec.sample_rate, spec.channels as u32).expect("Could not create push node");
     let mut send_more_audio = |n : &mut PushNode| {
@@ -44,8 +45,10 @@ fn main() {
         n.feed(frames as u32 * spec.channels as u32, buf.as_mut_ptr()).expect("Failed to feed data to push node");
     };
     
+    // give it 2048 frames of audio so it has enough audio to start with
     send_more_audio(&mut push_node);
-    push_node.set_low_callback(|n: &mut PushNode| send_more_audio(n)).expect("Failed to set the low callback");
+    send_more_audio(&mut push_node);
+    push_node.set_low_callback(send_more_audio).expect("Failed to set the low callback");
     
     push_node.connect_server(0).expect("Could not connect the push node to the server for playback");
     
