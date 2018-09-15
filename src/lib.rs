@@ -1,6 +1,7 @@
-//!
 //! Rust bindings for [Libaudioverse](https://github.com/libaudioverse/libaudioverse), a highly flexible realtime audio synthesis library.
 //!
+
+#![feature(nll)]
 
 extern crate libaudioverse_sys;
 

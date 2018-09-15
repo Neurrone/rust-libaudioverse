@@ -17,5 +17,8 @@ path       = "src/lib.rs"
 path = "libaudioverse-sys"
 version = "0.1.0"
 
+[dev-dependencies]
+hound = "3.4.0"
+
 [features]
 bindgen = ["libaudioverse-sys/bindgen"]

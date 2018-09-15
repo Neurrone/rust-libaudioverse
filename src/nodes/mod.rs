@@ -9,6 +9,7 @@ pub mod file_streamer_node;
 pub mod gain_node;
 pub mod hrtf_node;
 // pub mod multipanner_node;
+pub mod push_node;
 pub mod source_node;
 
 use super::*;
@@ -16,7 +17,7 @@ use super::libaudioverse_sys;
 use std::os::raw::{ c_uint };
 use check;
 
-use self::properties::{float_property, node_state_property};
+pub use self::properties::{float_property, node_state_property};
 
 /*
 pub use self::buffer_node::BufferNode;
