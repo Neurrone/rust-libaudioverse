@@ -1,0 +1,1 @@
+You can place libraries for linking here. Provided mostly for a development convenience on Windows.
