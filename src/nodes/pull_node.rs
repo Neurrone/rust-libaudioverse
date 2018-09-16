@@ -17,8 +17,8 @@ use Result;
 /// 0 | Depends on arguments to this node’s constructor. | The result of the configured callback.
 
 pub struct PullNode<'node> {
-    pub handle: libaudioverse_sys::LavHandle,
-    pub audio_callback: Option<Box<Box<'node + FnMut(&PullNode, i32, i32, &mut [f32])>>>,
+    handle: libaudioverse_sys::LavHandle,
+    audio_callback: Option<Box<Box<'node + FnMut(&PullNode, i32, i32, &mut [f32])>>>,
 }
 
 impl<'node> Node for PullNode<'node> {

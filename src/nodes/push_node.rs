@@ -16,9 +16,9 @@ use Result;
 /// ------|----------|------------
 /// 0 | Depends on arguments to this node’s constructor. | Either audio from the internal queue or zero.
 pub struct PushNode<'node> {
-    pub handle: libaudioverse_sys::LavHandle,
-    pub low_callback: Option<Box<Box<'node + FnMut(&mut PushNode)>>>,
-    pub underrun_callback: Option<Box<Box<'node + FnMut(&mut PushNode)>>>,
+    handle: libaudioverse_sys::LavHandle,
+    low_callback: Option<Box<Box<'node + FnMut(&mut PushNode)>>>,
+    underrun_callback: Option<Box<Box<'node + FnMut(&mut PushNode)>>>,
 }
 
 impl<'node> Node for PushNode<'node> {
