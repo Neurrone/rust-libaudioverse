@@ -1,7 +1,6 @@
 use super::super::{libaudioverse_sys, server};
 use super::properties::{
-    BoolProperty, DistanceModelProperty, Float3Property, FloatProperty,
-    PanningStrategyProperty,
+    BoolProperty, DistanceModelProperty, Float3Property, FloatProperty, PanningStrategyProperty,
 };
 use super::{environment_node, Node};
 use check;
