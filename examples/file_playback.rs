@@ -1,7 +1,10 @@
 use std::ffi::CString;
 use std::{env, thread, time};
 extern crate libaudioverse;
-use libaudioverse::{Buffer, nodes::{BufferNode, Node}, Server};
+use libaudioverse::{
+    nodes::{BufferNode, Node},
+    Buffer, Server,
+};
 
 // Plays the provided .ogg file
 fn main() {
